@@ -7,7 +7,12 @@ body {
 	display: grid;
 	/*grid-template-columns: 30% 20% 50%;*/
 	/*grid-template-columns: 1fr 2fr 1fr;*/
-	grid-template-columns: repeat(3, 1fr);
+	/* grid-template-columns: repeat(3, 1fr); */
+	grid-template-columns: repeat(6, 1fr);
+	/* Create four rows */
+	grid-template-rows: repeat(4, minmax(150px, auto));
+
+	grid-gap: 10px;
 	max-width: 960px;
 	margin: 0 auto;
 }
@@ -18,4 +23,32 @@ body {
 #content div:nth-child(even) {
 	background: #777;
 	padding: 30px;
+}
+
+/* Place the div in any position */
+.one {
+	/*Define where your div start and end.*/
+	grid-column-start: 1;
+	grid-column-end: 3;
+	/*Alternative way is to use the grid-column start/end shorthand.*/
+}
+
+.two {
+	grid-column: 3/7;
+}
+.three {
+	grid-column: 1/4;
+	grid-row: 2/4;
+}
+.four {
+	grid-column: 4/7;
+	grid-row: 2/4;
+}
+
+.five {
+	grid-column: 3/7;
+}
+.six {
+	grid-row: 4;
+	grid-column: 1/3;
 }
